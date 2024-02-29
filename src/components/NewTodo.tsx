@@ -1,19 +1,21 @@
 import { useRef } from 'react';
 import classes from './NewTodo.module.css'
 const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
+    
     const todoTextInputRef = useRef<HTMLInputElement>(null);
-
     const submitHandler = (event: React.FormEvent) => {
         event.preventDefault();
 
         const enteredText = todoTextInputRef.current!.value;
 
         if (enteredText.trim().length === 0) {
-            //throw an error
+            // 입력이 비어있을 경우 아무것도 하지 않음
             return;
         }
 
         props.onAddTodo(enteredText);
+        todoTextInputRef.current!.value= ''; // Input 창 클리어
+
     };
     return (
         <form onSubmit={submitHandler} className={classes.form}>

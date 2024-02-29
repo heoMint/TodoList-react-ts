@@ -8,7 +8,6 @@ function App() {
     // Todo의 데이터모델을 사용하는 객체배열
     // const todos = [new Todo('Learn React'), new Todo('Learn TypeScript')];
     const [todos, setTodos] = useState<Todo[]>([]);
-
     const addTodoHandler = (todoText: string) => {
         const newTodo = new Todo(todoText);
 
@@ -18,9 +17,10 @@ function App() {
         });
     };
 
-    const removeTodoHandler = (id: string) =>{
-        setTodos((prevTodos)=> prevTodos.filter((todo)=> todo.id !== id))
-    }
+    const removeTodoHandler = (id: string) => {
+        setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+    };
+
     return (
         <div>
             <NewTodo onAddTodo={addTodoHandler} />
