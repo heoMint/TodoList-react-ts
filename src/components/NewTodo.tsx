@@ -2,7 +2,7 @@ import { useRef, useContext } from 'react';
 import { TodosContext } from '../store/todos-context';
 import classes from './NewTodo.module.css';
 
-const NewTodo: React.FC = () => {
+const NewTodo: React.FC = (props) => {
     const TodosCtx = useContext(TodosContext);
 
     const todoTextInputRef = useRef<HTMLInputElement>(null);
@@ -18,6 +18,9 @@ const NewTodo: React.FC = () => {
 
         TodosCtx.addTodo(enteredText);
         todoTextInputRef.current!.value = ''; // Input 창 클리어
+
+
+
     };
     return (
         <form onSubmit={submitHandler} className={classes.form}>

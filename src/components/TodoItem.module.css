@@ -1,7 +1,37 @@
+div {
+    display: flex;
+    flex-direction: column;
+}
+
 .item {
     margin: 1rem 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     padding: 1rem;
     background-color: #eeefff;
+    display: flex; /* Flexbox 레이아웃 사용 */
+    align-items: center; /* 수직 정렬 */
+}
+.done {
+    color: #7e7e7e;
+    text-decoration: line-through; /* 완료된 항목에 취소선 추가 */
+}
+.checkedBox {
+    margin: 1rem;
+    color: #d2abff;
     cursor: pointer;
+}
+.button {
+    border: none;
+    background-color: #eeefff;
+    color: rgb(191, 150, 210);
+    overflow: hidden;
+    position: absolute;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transform: translateX(550px);
+}
+.button:hover {
+    color: rgb(145, 103, 165);
+    font-size: 2rem;
+    transition: 0.6s ease-in-out;
 }

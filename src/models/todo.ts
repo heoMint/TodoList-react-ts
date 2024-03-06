@@ -2,10 +2,12 @@
 class Todo {
     id: string;
     text: string;
+    done: boolean;
 
     constructor(todoText: string) {
         this.text = todoText;
-        this.id = new Date().toISOString();
+        this.id = new Date().toISOString(); // id 값 생성
+        this.done = false; // 할일이 생성되지 않았을 시 초기화
     }
 }
 

@@ -9,7 +9,14 @@ const Todos: React.FC = () => {
     return (
         <ul className={classes.todos}>
             {todosCtx.items.map((item) => (
-                <TodoItem key={item.id} text={item.text} onRemoveTodo={todosCtx.removeTodo.bind(null, item.id)} />
+                <TodoItem
+                    key={item.id}
+                    text={item.text}
+                    done={item.done}
+                    onCheckedTodo={() => todosCtx.checkedTodo(item.id, item.done)}
+                    onRemoveTodo={todosCtx.removeTodo.bind(null, item.id)}
+                    id={''}
+                />
             ))}
         </ul>
     );
