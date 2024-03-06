@@ -15,16 +15,13 @@ const NewTodo: React.FC = (props) => {
             // 입력이 비어있을 경우 아무것도 하지 않음
             return;
         }
-
         TodosCtx.addTodo(enteredText);
         todoTextInputRef.current!.value = ''; // Input 창 클리어
-
-
 
     };
     return (
         <form onSubmit={submitHandler} className={classes.form}>
-            <label htmlFor="text">Todo Text</label>
+            <label htmlFor="text">Todo List</label>
             <input type="text" id="text" ref={todoTextInputRef} />
             <button>추가</button>
         </form>
